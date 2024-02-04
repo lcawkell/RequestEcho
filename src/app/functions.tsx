@@ -1,0 +1,1 @@
+export const getQueryString = (param:string) => new URLSearchParams(window.location.search).get(param);

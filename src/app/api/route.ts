@@ -11,7 +11,7 @@ export async function GET(request:NextRequest) {
 }
 
 async function getPublicEcho() {
-  return await prisma.echo.findMany( {take: 1, orderBy: { createdAt: 'desc' } } );
+  return await prisma.echo.findMany( {take: 1, where: { secret: null }, orderBy: { createdAt: 'desc' } } );
 }
 
 async function getSecretEchos(param:string) {

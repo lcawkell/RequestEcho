@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { URLSearchParams } from "url";
 import { PrismaClient } from '@prisma/client';
 
@@ -36,7 +36,7 @@ async function doRequest(request: NextRequest) {
     }
   });
 
-  return Response.json(response);
+  return NextResponse.json(response);
 }
 
 async function parseFormData(request:Request) {
